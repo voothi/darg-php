@@ -12,13 +12,23 @@
 </head>
 
 <body>
-    <form action="" method="post">
-        <label>Name</label>
-        <input type="text" name="name" value="Enter yor name">
-        <label>Location</label>
-        <input type="text" name="location" value="Enter yor location">
-        <button type="submit" name="save">Save</button>
-    </form>
+    <div class="row justify-content-center">
+        <form action="#" method="post">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" name="name" value="Enter yor name">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input class="form-control" type="text" name="location" value="Enter yor location">
+            </div>
+
+            <button type="submit" name="save">Save</button>
+        </form>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
