@@ -13,7 +13,7 @@
 
 <body>
     <div class="row justify-content-center">
-        <form action="#" method="post">
+        <form action="process.php" method="post">
 
             <div class="form-group">
                 <label>Name</label>
@@ -21,13 +21,19 @@
             </div>
 
             <div class="form-group">
-                <label>Location</label> 
+                <label>Location</label>
                 <input class="form-control" type="text" name="location" value="Enter yor location">
             </div>
 
             <button class="btn btn-primary" type="submit" name="save">Save</button>
         </form>
     </div>
+
+    <!-- <?php
+    echo ("<pre>");
+    print_r($_POST);
+    ?> -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
