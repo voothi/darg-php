@@ -21,11 +21,11 @@
             </div>
 
             <div class="form-group">
-                <label>Location</label>
+                <label>Location</label> 
                 <input class="form-control" type="text" name="location" value="Enter yor location">
             </div>
 
-            <button type="submit" name="save">Save</button>
+            <button class="btn btn-primary" type="submit" name="save">Save</button>
         </form>
     </div>
 
