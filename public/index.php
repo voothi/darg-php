@@ -12,6 +12,26 @@
 </head>
 
 <body>
+    <?php
+    require_once 'process.php';
+    ?>
+
+    <?php
+    $mysqli = new mysqli("localhost", "root", "", "dbdargs");
+    $result = $mysqli->query("SELECT * FROM data");
+    pre_r($result);
+    pre_r($result->fetch_assoc());
+    pre_r($result->fetch_assoc());
+
+    function pre_r($arr)
+    {
+        echo ("<pre>");
+        print_r($arr);
+        echo ("</pre>");
+    }
+
+    ?>
+
     <div class="row justify-content-center">
         <form action="process.php" method="post">
 
