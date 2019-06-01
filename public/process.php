@@ -7,3 +7,9 @@ if (isset($_POST['save'])) {
 
     $mysqli->query("INSERT INTO data (name, location) VALUES ('$name', '$location')");
 }
+
+if (isset($_GET['delete'])) { 
+    $id = mysqli_real_escape_string($mysqli, $_GET['delete']);
+
+    $mysqli->query("DELETE FROM data WHERE id=$id");
+}

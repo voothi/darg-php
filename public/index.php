@@ -20,36 +20,30 @@
     $mysqli = new mysqli("localhost", "root", "", "dbdargs");
     $result = $mysqli->query("SELECT * FROM data");
     ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
 
-    <div class="row justify-content-center">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th colspan="2">Action</th>
-                </tr>
-            </thead>
-
-            <?php
-            while ($row = $result->fetch_assoc()) :
-                ?>
-
-                <tr>
-                    <td><?php echo $row['name']; ?></td>
-                    <td><?php echo $row['location']; ?></td>
-                    <td>
-                        <a class="btn btn-info" href="index.php?edit=<?php echo $row['id']; ?>">Edit</a>
-                        <a class="btn btn-danger" href="process.php?delete=<?php echo $row['id']; ?>">Delete</a>
-                    </td>
-                </tr>
-
-            <?php
-        endwhile;
-        ?>
-        </table>
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                    <tr>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['location']; ?></td>
+                        <td>
+                            <a class="btn btn-info" href="index.php?edit=<?php echo $row['id']; ?>">Edit</a>
+                            <a class="btn btn-danger" href="process.php?delete=<?php echo $row['id']; ?>">Delete</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+        </div>
     </div>
-
 
 
     <div class="row justify-content-center">
