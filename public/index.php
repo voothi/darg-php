@@ -48,15 +48,15 @@
 
     <div class="row justify-content-center">
         <form action="process.php" method="post">
-
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="form-group">
                 <label>Name</label>
-                <input class="form-control" type="text" name="name" value="<?php echo $name ?>" placeholder="Enter yor name">
+                <input class="form-control" type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter yor name">
             </div>
 
             <div class="form-group">
                 <label>Location</label>
-                <input class="form-control" type="text" name="location" value="<?php echo $location ?>" placeholder="Enter yor location">
+                <input class="form-control" type="text" name="location" value="<?php echo $location; ?>" placeholder="Enter yor location">
             </div>
 
             <?php if ($update == true) : ?>
@@ -64,6 +64,7 @@
             <?php else : ?>
                 <button class="btn btn-primary" type="submit" name="save">Save</button>
             <?php endif; ?>
+
         </form>
     </div>
 
