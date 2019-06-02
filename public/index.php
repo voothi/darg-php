@@ -16,6 +16,15 @@
     require_once 'process.php';
     ?>
 
+    <?php if (isset($_SESSION['message'])) : ?>
+        <div class="alert alert-<?php $_SESSION['msg_type'] ?>">
+            <?php
+            echo ($_SESSION['message']);
+            unset($_SESSION['message']);
+            ?>
+        </div>
+    <?php endif; ?>
+
     <?php
     $mysqli = new mysqli("localhost", "root", "", "dbdargs");
     $result = $mysqli->query("SELECT * FROM data");
