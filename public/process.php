@@ -1,6 +1,6 @@
 <?php
 $mysqli = new mysqli("localhost", "root", "", "dbdargs");
-echo pre_r($_POST);
+
 $id = 0;
 $update = false;
 $name = '';
@@ -42,13 +42,4 @@ if (isset($_POST['update'])) {
     $result = $mysqli->query("UPDATE data SET name='name', location='location' WHERE id=$id");
 
     header('Location: index.php');
-}
-
-
-
-function pre_r($arr)
-{
-    echo ("<pre>");
-    print_r($arr);
-    echo ("</pre>");
 }
