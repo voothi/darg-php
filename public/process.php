@@ -39,7 +39,7 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $location = $_POST['location'];
-    $result = $mysqli->query("UPDATE data SET name='name', location='location' WHERE id=$id");
+    $result = $mysqli->query("UPDATE data SET name=$name, location=$location WHERE id=$id");
 
     header('Location: index.php');
 }
