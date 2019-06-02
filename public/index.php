@@ -16,11 +16,12 @@
     require_once 'process.php';
     ?>
 
-    <?php
-    $mysqli = new mysqli("localhost", "root", "", "dbdargs");
-    $result = $mysqli->query("SELECT * FROM data");
-    ?>
     <div class="container">
+        <?php
+        $mysqli = new mysqli("localhost", "root", "", "dbdargs");
+        $result = $mysqli->query("SELECT * FROM data");
+        ?>
+
         <div class="row justify-content-center">
             <table class="table">
                 <thead>
@@ -45,25 +46,26 @@
         </div>
     </div>
 
-
     <div class="row justify-content-center">
         <form action="process.php" method="post">
 
             <div class="form-group">
                 <label>Name</label>
-                <input class="form-control" type="text" name="name" value="Enter yor name">
+                <input class="form-control" type="text" name="name" value="<?php echo $name ?>" placeholder="Enter yor name">
             </div>
 
             <div class="form-group">
                 <label>Location</label>
-                <input class="form-control" type="text" name="location" value="Enter yor location">
+                <input class="form-control" type="text" name="location" value="<?php echo $location ?>" placeholder="Enter yor location">
             </div>
 
-            <button class="btn btn-primary" type="submit" name="save">Save</button>
+            <?php if ($update == true) : ?>
+                <button class="btn btn-info" type="submit" name="update">Update</button>
+            <?php else : ?>
+                <button class="btn btn-primary" type="submit" name="save">Save</button>
+            <?php endif; ?>
         </form>
     </div>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
